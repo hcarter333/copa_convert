@@ -60,7 +60,7 @@ def archive_post(post, out_root):
     pub_dt    = parse_iso_z(post["published"]["$t"])
     ts        = pub_dt.strftime("%Y%m%dT%H%M%SZ")
     slug      = slugify(title)
-    post_dir  = os.path.join(out_root, f"{ts}_{slug}")
+    post_dir  = os.path.join(out_root, f"{ts}")
     os.makedirs(post_dir, exist_ok=True)
 
     # 1) Locate the post’s HTML URL
